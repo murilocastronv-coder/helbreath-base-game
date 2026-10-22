@@ -32,8 +32,8 @@ export function ConnectDialog({
 }: ConnectDialogProps) {
     const { isOpen, defaultCharacterName, lastAttempt } = useStore(connectDialogStore, (s) => s);
     const [characterName, setCharacterName] = useState('');
-    const [host, setHost] = useState('localhost');
-    const [portText, setPortText] = useState('1337');
+    const [host, setHost] = useState('helbreath-multiplayer-server.onrender.com');
+    const [portText, setPortText] = useState('443');
 
     useEffect(() => {
         if (!isOpen) {
@@ -41,8 +41,8 @@ export function ConnectDialog({
         }
         const init = lastAttempt ?? {
             characterName: defaultCharacterName,
-            host: 'localhost',
-            port: 1337,
+            host: 'helbreath-multiplayer-server.onrender.com',
+            port: 443,
         };
         setCharacterName(init.characterName);
         setHost(init.host);
