@@ -458,7 +458,8 @@ export class NetworkManager {
         return new Promise((resolve, reject) => {
             try {
                 this.authenticateCharacterName = characterName.trim();
-                const websocketUrl = `ws://${ip}:${port}/ws`;
+                const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+                const websocketUrl = `${protocol}//${ip}:${port}/ws`;
                 const socket = new WebSocket(websocketUrl);
                 socket.binaryType = 'arraybuffer';
 
