@@ -21,7 +21,7 @@ const config = {
         roundPixels: true // Round pixel positions to prevent sub-pixel rendering
     },
     scale: {
-        mode: Scale.NONE,
+        mode: Scale.FIT,
         autoCenter: Scale.CENTER_BOTH,
         fullscreenTarget: 'game-wrapper'
     },
