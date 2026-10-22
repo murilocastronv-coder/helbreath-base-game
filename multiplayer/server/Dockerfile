@@ -8,4 +8,4 @@ WORKDIR /app
 COPY --from=build /app/publish .
 COPY --from=build /src/multiplayer/server/Config ./Config
 ENV ASPNETCORE_URLS=http://0.0.0.0:10000
-CMD ["sh", "-c", "sed -i 's/\"port\": 1337/\"port\": '${PORT:-10000}/' Config/Settings.json && dotnet Server.dll"]
+CMD ["sh", "-c", "sed -i \"s/\\\"port\\\": 1337/\\\"port\\\": ${PORT:-10000}/\" Config/Settings.json && dotnet Server.dll"]
